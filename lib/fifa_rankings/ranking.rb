@@ -33,6 +33,35 @@ class FifaRankings::Country
       @@all << self
     end
    
+        
+def self.above_1500
+
+      above_1500 = []
+      
+        @@all.each do |country |
+          if country.points.to_i > 1500
+      
+              above_1500 << country
+            end
+          end
+        above_1500
+      end
+
+def self.uefa_teams
+  #This method will return an array of Country objects that are part of the UEFA conference
+
+    uefa_teams = []
+      
+        @@all.each do |conference|
+          if conference.conference ==  "#UEFA#"
+  
+            uefa_teams << conference
+      
+        end
+      end
+    uefa_teams
+  end
+    
     def self.doc
       @doc = Nokogiri::HTML(open(self.url))
     end
