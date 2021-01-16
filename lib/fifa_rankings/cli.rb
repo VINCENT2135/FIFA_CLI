@@ -1,6 +1,7 @@
 class FifaRankings::CLI
     def call
       FifaRankings::Scraper.new.get_rankings
+        binding.pry
       start
     end
   
